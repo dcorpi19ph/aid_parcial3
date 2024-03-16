@@ -13,3 +13,23 @@ Time: 18:15
 Phone Number: +524445859868
 Message: Hola desde Python
 --------------------
+Date: 15/3/2024
+Time: 18:30
+Phone Number: +524445859868
+Message: Hola desde Python
+--------------------
+Date: 15/3/2024
+Time: 18:33
+Group ID: HMSd7sLfFPy4ivP0YtAqvE
+Message: Enviado
+--------------------
+Date: 15/3/2024
+Time: 18:35
+Group ID: HMSd7sLfFPy4ivP0YtAqvE
+Message: Enviado
+--------------------
+Date: 15/3/2024
+Time: 18:44
+Phone Number: +524445859868
+Message: Hola desde Python2
+--------------------

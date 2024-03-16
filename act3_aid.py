@@ -3,6 +3,7 @@ import sys
 import subprocess
 import json
 
+file_name = "datos.json"
 sistemaos = sys.platform
 sistema = platform.system()
 version = platform.win32_ver()
@@ -16,5 +17,9 @@ else:
 print(local)
 
 diccionario = {'ip':local, 'so':sistemaos, 'version':version, 'hostname':hostname, 'cpu':procesador}
-dictionaryToJson = json.dumps(diccionario)
-print(dictionaryToJson)
+file = open(file_name, "w")
+json.dump(diccionario, file, indent=4)
+file.close()
+
+#dictionaryToJson = json.dumps(diccionario)
+#print(dictionaryToJson)

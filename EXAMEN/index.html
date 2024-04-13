@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumir API de Datos del Sistema Operativo</title>
+</head>
+<body>
+    <h1>Datos del Sistema Operativo</h1>
+    <pre id="datos-sistema"></pre>
+
+    <script>
+        // Función para realizar la solicitud a la API y mostrar los datos del sistema
+        function obtenerDatosSistema() {
+            // URL de la API con el puerto 8080 y la ruta /so
+            var urlApi = "http://127.0.0.1:8080/so"; // Ajusta la URL si es necesario
+
+            // Realizar una solicitud GET a la API
+            fetch(urlApi)
+                .then(response => {
+                    // Verificar si la respuesta es exitosa (código de estado 200)
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("Error al obtener los datos del sistema operativo. Código de estado: " + response.status);
+                    }
+                })
+                .then(datosSistema => {
+                    // Convertir los datos del sistema a formato JSON y mostrarlos
+                    var datosSistemaJson = JSON.stringify(datosSistema, null, 2);
+                    var datosSistemaPre = document.getElementById("datos-sistema");
+                    datosSistemaPre.textContent = datosSistemaJson;
+                })
+                .catch(error => {
+                    // Mostrar cualquier error en la consola del navegador
+                    console.error("Ocurrió un error al obtener los datos del sistema operativo:", error);
+                });
+        }
+
+        // Llamar a la función para obtener los datos del sistema cuando la página se cargue
+        window.onload = obtenerDatosSistema;
+    </script>
+</body>
+</html>
